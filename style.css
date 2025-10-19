@@ -1,0 +1,152 @@
+:root{
+  --brand:#16a34a;
+  --bg:#28d892;          /* fondo app */
+  --text:#0f172a;        /* texto principal */
+  --muted:#64748b;       /* texto secundario */
+  --card:#ffffff;        /* fondo tarjetas */
+  --border:#e5e7eb;      /* bordes suaves */
+  --link:#2563eb;        /* azul links/badge */
+}
+
+/* ======= Reset suave ======= */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+img{ max-width:100%; display:block; }
+
+/* ======= Tema claro base ======= */
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+a{ color:var(--link); text-decoration:none; }
+a:hover{ color:var(--link); text-decoration:underline; }
+
+.navbar{
+  background:#09c5cf;
+  border-bottom:1px solid var(--border);
+}
+
+.container, .container-fluid{
+  max-width: 1200px;
+}
+
+/* ======= Tarjetas / badges / botones ======= */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:.75rem;
+}
+
+.badge-cat{
+  display:inline-block;
+  padding:.35rem .6rem;
+  border-radius:999px;
+  background:var(--link);
+  color:#e8d2d2;
+  font-weight:600;
+  font-size:.75rem;
+}
+
+.btn-brand{
+  background:var(--brand);
+  border:none;
+  color:#efe1e1;
+}
+.btn-brand:hover{ filter:brightness(1.05); }
+
+/* ======= Tablas ======= */
+.table{
+  --bs-table-bg:#d90d0d;
+  background:#ffffff;
+  border-color:var(--border);
+}
+.table td, .table th{
+  border-color:var(--border) !important;
+}
+.table-striped>tbody>tr:nth-of-type(odd){
+  --bs-table-striped-bg:#eb0f0f;
+}
+
+/* ======= Tipografías utilitarias ======= */
+.text-muted{ color:var(--muted) !important; }
+
+/* ======= Inputs ======= */
+.form-control, .form-select{
+  background:#e9e4e4;
+  color:var(--text);
+  border:1px solid var(--border);
+}
+.form-control:focus, .form-select:focus{
+  border-color: var(--link);
+  box-shadow: 0 0 0 .2rem rgba(5, 9, 16, 0.15);
+}
+
+/* ======= Líneas separadoras ======= */
+hr{
+  border:0;
+  border-top:1px solid var(--border);
+  opacity:1;
+}
+
+/* ======= Footer ======= */
+footer{ color:var(--muted); }
+
+/* ======= Ajustes del modal claro (coherente con tema) ======= */
+.modal-content{
+  background:#f7f3f3;
+  color:var(--text);
+  border:1px solid var(--border);
+}
+.btn-close{
+  filter: invert(0); /* se ve bien en claro */
+}
+
+/* ======= Exportación / Impresión (PDF) ======= */
+/* Contenedor fuera de pantalla con ancho A4 para html2canvas */
+.export-root{
+  position:fixed;
+  left:-10000px; top:0;
+  width:794px;              /* ~ A4 a 96dpi */
+  padding:16px;
+  background:#ffffff !important;
+  color:#111827 !important;
+  z-index:-1;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Forzar tema claro dentro del export */
+.export-light .table{
+  --bs-table-bg:#ffffff !important;
+  --bs-table-striped-bg:#f7f7f7 !important;
+  --bs-table-striped-color:#111827 !important;
+  color:#111827 !important;
+  border-color:#e5e7eb !important;
+}
+.export-light thead th{
+  background:#f3f4f6 !important;
+  color:#111827 !important;
+}
+.export-light .card{
+  background:#ffffff !important;
+  color:#111827 !important;
+  border:1px solid #e5e7eb !important;
+}
+.export-light .text-muted{ color:#6b7280 !important; }
+
+/* Bordes visibles en celdas de tabla exportada */
+.export-light table.table > :not(caption) > * > *{
+  border:1px solid #d1d5db !important;
+}
+
+/* Imprimir desde navegador: mostrar sólo el resumen en claro */
+@media print{
+  body{ background:#fff !important; color:#111 !important; }
+  body *{ visibility:hidden; }
+  #resumenHTML, #resumenHTML *{ visibility:visible; }
+  #resumenHTML{
+    position:absolute; left:0; top:0; width:100%;
+    background:#fff; color:#111;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "materiales": [
+    {"id":1, "nombre":"Cemento Portland x50kg", "categoria":"Cementos", "unidad":"bolsa", "precio": 12999, "coef": {"economica":0.95, "standard":1, "premium":1.08}},
+    {"id":2, "nombre":"Ladrillo hueco 12", "categoria":"Ladrillos", "unidad":"unidad", "precio": 850, "coef": {"economica":0.9, "standard":1, "premium":1.15}},
+    {"id":3, "nombre":"Arena fina", "categoria":"Áridos", "unidad":"m3", "precio": 23000, "coef": {"economica":0.92, "standard":1, "premium":1.1}},
+    {"id":4, "nombre":"Hierro del 8mm", "categoria":"Hierros", "unidad":"barra", "precio": 7800, "coef": {"economica":0.93, "standard":1, "premium":1.12}},
+    {"id":5, "nombre":"Pintura látex interior 20L", "categoria":"Pinturas", "unidad":"balde", "precio": 55999, "coef": {"economica":0.85, "standard":1, "premium":1.25}}
+  ]
+}
